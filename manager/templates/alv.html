@@ -25,16 +25,17 @@
                             <a href="/">{{ nav.first_item }}</a></div>
                     </li>
                     <li>
-                        <div><a href={% url 'relevance' %}>{{ nav.role_name }}</a></div>
+                        <div><a href={% url 'relevance' %}>{{ nav.second_item }}</a></div>
                     </li>
                     <li>
                         <div><a href={% url 'geo' %}>{{ nav.third_item }}</a></div>
                     </li>
                     <li>
-                        <div ><a href={% url 'abilities' %}>{{ nav.fourth_item }}</a></div>
+                        <div><a href={% url 'abilities' %}>{{ nav.fourth_item }}</a></div>
                     </li>
                     <li>
-                        <div style="border-radius: 0px 0px 25px 0px; background: rgba(77, 114, 77, 0.50); justify-content: center"><a style="color: #FFFFFF !important;" href={% url 'alv' %}>{{ nav.fifth_item }}</a></div>
+                        <div style="border-radius: 0px 0px 25px 0px; background: rgba(77, 114, 77, 0.50); justify-content: center">
+                            <a style="color: #FFFFFF !important;" href={% url 'alv' %}>{{ nav.fifth_item }}</a></div>
                     </li>
                 </ul>
             </nav>
@@ -42,7 +43,8 @@
     {% endfor %}
 
     <div class="home_text">
-      {% for data in last_vacancies_data %}
+        {% for data in last_vacancies_data %}
+
             <h1>{{ data.role_name }}</h1>
             <div class="empty_skills"></div>
         {% endfor %}
