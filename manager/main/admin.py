@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+admin.site.register(CustomNavigation)
+admin.site.register(CustomMainPage)
+admin.site.register(CustomRelevance)
+admin.site.register(CustomLocation)
+admin.site.register(CustomAbilities)
+admin.site.register(CustomHeadHunterLV)
