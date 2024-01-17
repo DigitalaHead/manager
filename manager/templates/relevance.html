@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Менеджер IT-проекта</title>
+    <link rel="stylesheet" href="{% static "css/styles.css" %}">
+</head>
+<body>
+<header>
+    <p>Менеджер IT-проекта</p>
+    <img class="logo" src="{% static 'images/logotip.png' %}">
+</header>
+<main>
+    <div class="body">
+        <div class="navigation">
+            <nav>
+                <ul>
+                    <li><div><a href="/">Главная</a></div></li>
+                    <li><div style="border-radius: 0px 0px 25px 0px; background: rgba(77, 114, 77, 0.50); justify-content: center"><a style="color: #FFFFFF !important;" href={% url 'relevance' %}>Востребованность</a></div></li>
+                    <li><div><a href={% url 'geo' %}>География</a></div></li>
+                    <li><div><a href={% url 'abilities' %}>Навыки</a></div></li>
+                    <li><div><a href={% url 'alv' %}>Последние вакансии</a></div></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="home_text" style="top: 200px">
+            <img class="demand_graph_1" src="{% static 'images/1.png' %}"/>
+            <img class="demand_graph_2" src="{% static 'images/2.png' %}"/>
+            <div class="tables">
+               
+            </div>
+        </div>
+    </div>
+</main>
+<footer style="top: 92.3%">
+    <p>Мохов Михаил Александрович АТ-02</p>
+</footer>
+</body>
+</html>
