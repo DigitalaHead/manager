@@ -4,32 +4,32 @@ from .models import *
 
 
 def render_page(http_request, template_name, content):
-    context = {'navigation': Navigation.objects.all(), 'content': content}
+    context = {'navigation': CustomNavigation.objects.all(), 'content': content}
     return render(http_request, template_name, context)
 
 
 def render_home(request):
-    content = MainPage.objects.all()
+    content = CustomMainPage.objects.all()
     return render_page(request, 'index.html', content)
 
 
 def render_demand(request):
-    content = Relevance.objects.all()
+    content = CustomRelevance.objects.all()
     return render_page(request, 'relevance.html', content)
 
 
 def render_geography(request):
-    content = Location.objects.all()
+    content = CustomLocation.objects.all()
     return render_page(request, 'geo.html', content)
 
 
 def render_skills(request):
-    content = Abilities.objects.all()
+    content = CustomAbilities.objects.all()
     return render_page(request, 'abilities.html', content)
 
 
 def render_last_vacancy(request):
-    last_vacancies_data = HeadHunterLV.objects.all()
+    last_vacancies_data = CustomHeadHunterLV.objects.all()
 
     if last_vacancies_data:
         vacancy_to_analyze = last_vacancies_data[0].vacancy_to_analyze
