@@ -1,3 +1,40 @@
+from datetime import datetime
 from django.shortcuts import render
+from .models import *
 
-# Create your views here.
+
+def render_page(http_request, template_name, content):
+    context = {'navigation': Navigation.objects.all(), 'content': content}
+    return render(http_request, template_name, context)
+
+
+def render_home(request):
+    content = MainPage.objects.all()
+    return render_page(request, 'HomePage.html', content)
+
+
+def render_demand(request):
+    content = Relevance.objects.all()
+    return render_page(request, 'Demand.html', content)
+
+
+def render_geography(request):
+    content = Location.objects.all()
+    return render_page(request, 'Geography.html', content)
+
+
+def render_skills(request):
+    content = Abilities.objects.all()
+    return render_page(request, 'Skills.html', content)
+
+
+def render_last_vacancy(request):
+    last_vacancies_data = HeadHunterLV.objects.all()
+
+    if last_vacancies_data:
+        vacancy_to_analyze = last_vacancies_data[0].vacancy_to_analyze
+        hh_api = HeadHunterVacancies(vacancy_to_analyze)
+        vacancies = hh_api.get_data_vacancies('2023-12-20', 10)
+
+    context = {'vacs': vacancies, 'last_vacancies_data': last_vacancies_data}
+    return render_page(request, 'LastVacancy.html', context)
