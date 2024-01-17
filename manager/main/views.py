@@ -10,22 +10,22 @@ def render_page(http_request, template_name, content):
 
 def render_home(request):
     content = MainPage.objects.all()
-    return render_page(request, 'HomePage.html', content)
+    return render_page(request, 'index.html', content)
 
 
 def render_demand(request):
     content = Relevance.objects.all()
-    return render_page(request, 'Demand.html', content)
+    return render_page(request, 'relevance.html', content)
 
 
 def render_geography(request):
     content = Location.objects.all()
-    return render_page(request, 'Geography.html', content)
+    return render_page(request, 'geo.html', content)
 
 
 def render_skills(request):
     content = Abilities.objects.all()
-    return render_page(request, 'Skills.html', content)
+    return render_page(request, 'abilities.html', content)
 
 
 def render_last_vacancy(request):
@@ -37,4 +37,4 @@ def render_last_vacancy(request):
         vacancies = hh_api.get_data_vacancies('2023-12-20', 10)
 
     context = {'vacs': vacancies, 'last_vacancies_data': last_vacancies_data}
-    return render_page(request, 'LastVacancy.html', context)
+    return render_page(request, 'alv.html', context)
