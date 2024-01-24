@@ -36,3 +36,9 @@ class HeadHunterVacancies:
                                     'published_at': resp['published_at'][:10],
                                     'alternate_url': resp['alternate_url']})
         return result_list
+
+
+if __name__ == '__main__':
+    hh = HeadHunterVacancies('Менеджер IT-проекта')
+    vacs = hh.get_data_vacancies('2022-12-12', 10)
+    print(vacs)
