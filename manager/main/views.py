@@ -35,6 +35,10 @@ def render_last_vacancy(request):
     if last_vacancies_data:
         vacancy_to_analyze = last_vacancies_data[0].vacancy_to_analyze
         hh_api = HeadHunterVacancies(vacancy_to_analyze)
+<<<<<<< HEAD
         vacancies = hh_api.get_data_vacancies('2024-01-24', 10)
+=======
+        vacancies = hh_api.get_data_vacancies('2024-01-24', 5)
+>>>>>>> 5e3e775cf4e16d9af501edf660bead264aab0001
     context = {'vacs': vacancies, 'last_vacancies_data': last_vacancies_data}
     return render_page(request, 'alv.html', context)
