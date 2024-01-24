@@ -4,16 +4,16 @@ import matplotlib.pyplot as plt
 
 
 currency_to_rub = {
-    "AZN": 35.68,
-    "BYR": 23.91,
-    "EUR": 59.90,
-    "GEL": 21.74,
-    "KGS": 0.76,
-    "KZT": 0.13,
+    "AZN": 54.08,
+    "BYR": 28.7,
+    "EUR": 101.29,
+    "GEL": 34.2,
+    "KGS": 1.03,
+    "KZT": 0.20,
     "RUR": 1,
-    "UAH": 1.64,
-    "USD": 60.66,
-    "UZS": 0.0055,
+    "UAH": 2.45,
+    "USD": 91.94,
+    "UZS": 0.0074,
 }
 
 # file_name = input('Введите название файла: ')
@@ -85,13 +85,13 @@ plt.savefig('4.png', dpi=300)
 text_file = open(f"зп.html", "w")
 text_file.write(sal_year.to_html())
 text_file.close()
-text_file = open(f"зпМенеджер.html", "w")
+text_file = open(f"зп_Менеджер.html", "w")
 text_file.write(sal_year_job.to_html())
 text_file.close()
 text_file = open(f"кол-воВакансий.html", "w")
 text_file.write(sal_count.to_html())
 text_file.close()
-text_file = open(f"Кол-воВакМенеджер.html", "w")
+text_file = open(f"Кол-воВак_Менеджер.html", "w")
 text_file.write(sal_count_job.to_html())
 text_file.close()
 
