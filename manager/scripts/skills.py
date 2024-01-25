@@ -64,7 +64,7 @@ for key_skills in key_skillses:
     table = pd.concat([table, res])
 
 table.reset_index()
-table['Год'] = ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022']
+table['Год'] = ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023']
 
 ax = table.plot(x='Год', y=top10)
 fig = ax.get_figure()
